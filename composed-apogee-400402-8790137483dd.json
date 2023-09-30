@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "composed-apogee-400402",
+  "private_key_id": "8790137483ddf29681bf6fae1fcd543ecd072d87",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCVvzHxotX0XHbW\nvo5IrnqEicE0MCIRCY+YbBr25DBm3LZVCwDH5NnRk1K5YQLRZENUddCFDrK0ZM+Q\nV3CPKSjMd9VBCBuC3oxhBnFPs7WYSQpbnSdaZCpbHCRZxvJthEZRvanczxRNIo86\nW2J8F1il/qadbPTOYNkCr9dXA4TeNmn4ZTutzbRDol/hvrSt6vwfsmaDGU6zm5JQ\nFoZz4NoUjBpR/jQUr9SWmTAVCkLllnhXE2CzvDAM2mK2PG+38XuL0Q0ikwX2VrYB\n6RFbBhOhr2fezoYWxN20pdmSuR2DOUVZGQG/NfFbyNqmCCfUdI/QEpWhO4sJ1CsZ\ng9YCNtUXAgMBAAECggEAJqaMSg2ZArLw+3mAuRLLzbTOmN1JlbMtjI5uoUYBljMm\nnqmx4GZZsEXBxtZax1gFJuIn2YgTKQuSJXPkOhdKEAhoExp4G128xvhGO+erGezU\nTxQviZ2r7wtC+KcogIrxKXz2QGd0mnoulMXslBHkkCe7sotiXnhR2ucvAicG3uGw\nZ9yZQnYBX2tF11GCpEtRU2vv3P0pZmLsKFq4cU5KFkTDpAdzP/dq6NrRv049WImh\n6jqi/XhCWbGUw53eG5i2/03PGiATGEq5YLdaKUifh3uqlCmmrtAxNIaqKUbTrBV7\n/ZXGMWvhAcUwRvbJEBQw9VIoMU72xY/WsADRUvqQCQKBgQDM7/2qPIOPW+u8QfwW\nnWVWRmCZI6e/RR62sqdb7ABhnPEFKaNlMvJSDPV9SSwt2qOPliScZa0AnfYxDVRu\n1sPzBShMG9xOt1YDieprH5KtSm0eXicTBev+I71EkLhdp7a04YV0UcSLhf4exvPU\nWuAPb21SdOAngIHPhKidn9SQ3wKBgQC7DtoCjbMljpoZl7Qen6kXCGe4N2+1Qie8\nWfX/mka9k3J21+5Wky84sctPbJ8fTKlGc1zB/OBiznD01zMG7wsYJ8lqKlQ8N0Ov\neRx1LFPbDZNreThE/5DjTvTQqskcIZArMGG9+X4LGq/NV2L2UcBA4edaQsK1Lyiw\nn0DbBoOqyQKBgGyVa+3bCknXBlxFCfBhjOPdfiklvyeU0+UxW4NU1A7kPL/jg/OG\nvuXCf//V2VaiVa8qelNze+qrx1nOGkJwAHqu7N8GlAARG73cQRxpKiovGQnSERn/\nNT7+aLX/h+/3gNLt+uvatyzF3hMojuChFb6X53CdBHdpm138h+qcWOA5AoGBALOe\nsENxc8wlod3faYtafxDp9kbTnMXt76AStoCp0THrKyfpcyjZDqgfOf5bbHSutYE7\n958jRwg5+gdxucL3uayJUARM/zQPUURnRKdTWHZpE91Iunqu+Z78S2MwDAuiQwDl\n5YV51Mmu54+DUTj8CWOESRbIMpWu4iCv26Q2HirZAoGAVxsVVQb2iaAwvADOwkhf\n+48BzW+lx2CI3CXMNb9RzfQV+jzEy/OLRvGoyb3+i0Lx8JtJXWs1dGN5HRWe/sdt\nOBC6nVja5slgHV1dLVMvvdDtARxP2JMqf8RK9MrJmNQt6Lwmo8iHWJfL1WEvccn1\nVs0M/Qx7h32gx3vxBc6n1hQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cuenta-de-servicio-chat-bot1@composed-apogee-400402.iam.gserviceaccount.com",
+  "client_id": "113840881260037056678",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cuenta-de-servicio-chat-bot1%40composed-apogee-400402.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
