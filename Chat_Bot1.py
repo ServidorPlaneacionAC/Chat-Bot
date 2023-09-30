@@ -4,7 +4,7 @@ from Class_Google_Sheet_STL import ConexionGoogleSheets
 from Class_Chat_Bot import ChatBot
 import streamlit as st
 
-def ejecutar_chatbot():
+def ejecutar_chatbot(input_text):
     ''' etapa 1 conectar con google y traer la información'''
     clave_google = 'composed-apogee-400402-8790137483dd.json'
     id_hoja = '1WkTJBx8-4xbKcgNun6kz3qLFPWZeiJCCrip49Jaqppk'
@@ -19,7 +19,6 @@ def ejecutar_chatbot():
     # si las palabras estan bien usar esta linea
     # df['columna2'] = df['columna2'].str.split(',')
     diccionario = dict(zip(df['Titulo'], df['Palabras relacionadas'])) #genero diccionario con clave titulo y valor palabras relacionadas
-    input_text = "tienes necesito"
     keywords = chatbot.extraer_palabras_clave(input_text)
 
     '''Iniciar análisis de mensaje'''
@@ -32,11 +31,11 @@ def ejecutar_chatbot():
         st.write(f"Las coincidencias encontradas en orden de importancia son: .\n .\n {df_filtrado[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']]}")
 
 
-st.title("Aplicación con caja de texto y botón")
+st.title("Chatea con el Bicho")
 st.write("Hola soy el comandante, tu guia por los desarrollos en el negocio cárnico, indicame que buscas")
 # Agregar una caja de texto
 input_texto = st.text_input("Ingresa un texto:")
 
 # Agregar un botón que ejecute la función mostrar_texto
 if st.button("Mostrar"):
-    ejecutar_chatbot()
+    ejecutar_chatbot(input_texto)
