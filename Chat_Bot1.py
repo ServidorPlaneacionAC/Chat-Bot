@@ -6,7 +6,7 @@ import streamlit as st
 
 def ejecutar_chatbot():
     ''' etapa 1 conectar con google y traer la información'''
-    clave_google = r'D:\Nutresa\Proyectos\Chat-Bot1\composed-apogee-400402-8790137483dd.json'
+    clave_google = 'composed-apogee-400402-8790137483dd.json'
     id_hoja = '1WkTJBx8-4xbKcgNun6kz3qLFPWZeiJCCrip49Jaqppk'
     conexion = ConexionGoogleSheets(clave_google)
     df=conexion.obtener_dataframe(id_google_sheet=id_hoja)
