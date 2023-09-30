@@ -29,7 +29,7 @@ def ejecutar_chatbot(input_text):
         informes=chatbot.obtener_top(requerimiento)
         df_filtrado=chatbot.df_filtrado(informes,df)
         st.write(f"Las coincidencias encontradas en orden de importancia son: .\n .\n ")
-        st.dataframe({df_filtrado[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']]})
+        st.dataframe(df_filtrado[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']])
 
 
 st.title("Chatea con el Bicho")
