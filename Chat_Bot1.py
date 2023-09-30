@@ -5,13 +5,13 @@ from Class_Chat_Bot import ChatBot
 import streamlit as st
 
 def ejecutar_chatbot(input_text):
-    ''' etapa 1 conectar con google y traer la información'''
+    # ''' etapa 1 conectar con google y traer la información'''
     clave_google = 'composed-apogee-400402-8790137483dd.json'
     id_hoja = '1WkTJBx8-4xbKcgNun6kz3qLFPWZeiJCCrip49Jaqppk'
     conexion = ConexionGoogleSheets(clave_google)
     df=conexion.obtener_dataframe(id_google_sheet=id_hoja)
 
-    ''' Etapa 2 disponer información del df y del cliente'''
+    # ''' Etapa 2 disponer información del df y del cliente'''
     # Crear una instancia de la clase ChatBot
     chatbot = ChatBot()
     # si las palabras no estan bien separadas para compararlas con las palabras clave ejecutar esta linea, tiene mucho costo de recursos
@@ -21,7 +21,7 @@ def ejecutar_chatbot(input_text):
     diccionario = dict(zip(df['Titulo'], df['Palabras relacionadas'])) #genero diccionario con clave titulo y valor palabras relacionadas
     keywords = chatbot.extraer_palabras_clave(input_text)
 
-    '''Iniciar análisis de mensaje'''
+    # '''Iniciar análisis de mensaje'''
     requerimiento=chatbot.clasificar_tipo_peticion(keywords,diccionario) 
     if not requerimiento:
         st.write('lo siento no encuentro ninguna coincidencia con tu busqueda')
@@ -35,7 +35,7 @@ def ejecutar_chatbot(input_text):
 st.title("Chatea con el Bicho")
 st.write("Hola soy el comandante, tu guia por los desarrollos en el negocio cárnico, indicame que buscas")
 # Agregar una caja de texto
-input_texto = st.text_input("Ingresa un texto:")
+input_texto = st.text_input("Cuentame que buscas")
 
 # Agregar un botón que ejecute la función mostrar_texto
 if st.button("Mostrar"):
