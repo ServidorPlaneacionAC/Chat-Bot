@@ -40,7 +40,7 @@ input_texto = st.text_input("Cuentame que buscas")
 import streamlit as st
 
 # Define la URL de tu sitio de Google Sites
-google_sites_url = "https://sites.google.com/alimentoscarnicos.com.co/analiticaac/inicio?authuser=0"
+google_sites_url = "https://www.google.com/?hl=es"
 
 # Crea un iframe para mostrar el sitio de Google Sites
 st.write(f'<iframe src="{google_sites_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
