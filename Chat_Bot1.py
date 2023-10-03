@@ -40,7 +40,7 @@ input_texto = st.text_input("Cuentame que buscas")
 import streamlit as st
 
 # Define la URL de tu sitio de Google Sites
-google_sites_url = "https://www.google.com/?hl=es"
+google_sites_url = "http://www.calendario-colombia.com/calendario-2023"
 
 # Crea un iframe para mostrar el sitio de Google Sites
 st.write(f'<iframe src="{google_sites_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
