@@ -32,8 +32,8 @@ def ejecutar_chatbot(input_text):
         st.dataframe(df_filtrado[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']])
 
 
-st.title("Chatea con el Bicho")
-st.write("Hola soy el comandante, tu guia por los desarrollos en el negocio cárnico, indicame que buscas")
+st.title("ChatBot")
+st.write("Hola soy tu guia por los desarrollos en el negocio cárnico, indicame que buscas")
 # Agregar una caja de texto
 input_texto = st.text_input("Cuentame que buscas")
 
