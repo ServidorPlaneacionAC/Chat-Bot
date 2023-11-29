@@ -30,7 +30,7 @@ def ejecutar_chatbot(input_text):
         df_filtrado=chatbot.df_filtrado(informes,df)
         st.write(f"Las coincidencias encontradas en orden de importancia son: .\n .\n ")
         # st.dataframe(df_filtrado[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']].reset_index)
-        st.dataframe(df_filtrado[['Titulo', 'Enlace', 'Responsable', 'Frecuencia de actualizacion']].reset_index())
+        st.dataframe(df_filtrado[['Titulo', 'Enlace', 'Responsable', 'Frecuencia de actualizacion']]).reset_index()
 
 
 
