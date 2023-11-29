@@ -16,6 +16,7 @@ def ejecutar_chatbot(input_text):
     chatbot = ChatBot()
     # si las palabras no estan bien separadas para compararlas con las palabras clave ejecutar esta linea, tiene mucho costo de recursos
     df['Palabras relacionadas'] = df['Palabras relacionadas'].apply(chatbot.extraer_palabras_clave)
+    st.write(df[:4])
     # si las palabras estan bien usar esta linea
     # df['columna2'] = df['columna2'].str.split(',')
     diccionario = dict(zip(df['Titulo'], df['Palabras relacionadas'])) #genero diccionario con clave titulo y valor palabras relacionadas
@@ -37,10 +38,8 @@ st.write("Hola soy tu guia por los desarrollos en el negocio cárnico, indicame 
 # Agregar una caja de texto
 input_texto = st.text_input("Cuentame que buscas")
 
-import streamlit as st
-
 # Define la URL de tu sitio de Google Sites
-google_sites_url = "http://www.calendario-colombia.com/calendario-2023"
+#google_sites_url = "http://www.calendario-colombia.com/calendario-2023"
 
 # Crea un iframe para mostrar el sitio de Google Sites
 # st.write(f'<iframe src="{google_sites_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
