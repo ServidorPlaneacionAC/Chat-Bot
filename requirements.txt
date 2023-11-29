@@ -2,3 +2,4 @@ streamlit
 nltk
 pygsheets
 pandas
+unidecode

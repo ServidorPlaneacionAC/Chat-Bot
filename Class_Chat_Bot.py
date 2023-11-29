@@ -6,6 +6,7 @@ nltk.download('stopwords-es')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import pandas as pd
+from unidecode import unidecode
 
 class ChatBot:
     def __init__(self):
@@ -41,6 +42,7 @@ class ChatBot:
         extrae las palabras clave para hacer analisis de un texto
         '''
         words = word_tokenize(texto.lower())  # Convertir a minúsculas para mayor consistencia
+        words=[unidecode(word) for word in words]
         palabras_clave = []
 
         for palabra in words:
