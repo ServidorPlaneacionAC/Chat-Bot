@@ -43,7 +43,7 @@ import streamlit as st
 google_sites_url = "http://www.calendario-colombia.com/calendario-2023"
 
 # Crea un iframe para mostrar el sitio de Google Sites
-st.write(f'<iframe src="{google_sites_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
+# st.write(f'<iframe src="{google_sites_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
 
 
 # Agregar un botón que ejecute la función mostrar_texto
