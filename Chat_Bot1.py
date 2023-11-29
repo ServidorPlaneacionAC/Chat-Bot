@@ -16,7 +16,6 @@ def ejecutar_chatbot(input_text):
     chatbot = ChatBot()
     # si las palabras no estan bien separadas para compararlas con las palabras clave ejecutar esta linea, tiene mucho costo de recursos
     df['Palabras relacionadas'] = df['Palabras relacionadas'].apply(chatbot.extraer_palabras_clave)
-    st.write(df[:4])
     # si las palabras estan bien usar esta linea
     # df['columna2'] = df['columna2'].str.split(',')
     diccionario = dict(zip(df['Titulo'], df['Palabras relacionadas'])) #genero diccionario con clave titulo y valor palabras relacionadas
@@ -30,7 +29,9 @@ def ejecutar_chatbot(input_text):
         informes=chatbot.obtener_top(requerimiento)
         df_filtrado=chatbot.df_filtrado(informes,df)
         st.write(f"Las coincidencias encontradas en orden de importancia son: .\n .\n ")
-        st.dataframe(df_filtrado[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']])
+        # st.dataframe(df_filtrado[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']].reset_index)
+        st.dataframe(df_filtrado[['Titulo', 'Enlace', 'Responsable', 'Frecuencia de actualizacion']].reset_index())
+
 
 
 st.title("ChatBot")
