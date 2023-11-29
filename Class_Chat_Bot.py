@@ -7,6 +7,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import pandas as pd
 from unidecode import unidecode
+import re
 
 class ChatBot:
     def __init__(self):
@@ -76,3 +77,20 @@ class ChatBot:
         df_filtrado = df_filtrado.sort_values(by='orden')
         df_filtrado = df_filtrado.drop(columns='orden')
         return df_filtrado
+
+    def es_enlace(self,cadena):
+        '''
+            funcion que permite determinar si un string es o no un enlace
+            Retorna: True or False
+        '''
+        patron_enlace = re.compile(
+            r'^(http|https)://'  # Protocolo http o https
+            r'([a-zA-Z0-9.-]+)'  # Dominio
+            r'(\.[a-zA-Z]{2,})'   # Extensión de dominio
+            r'(/[a-zA-Z0-9%.-]*)*'  # Ruta opcional
+            r'(\?[a-zA-Z0-9&=.-]*)*'  # Parámetros de consulta opcionales
+            r'(#\w*)*$',  # Fragmento opcional
+            re.IGNORECASE
+        )
+        
+        return bool(re.match(patron_enlace, cadena))

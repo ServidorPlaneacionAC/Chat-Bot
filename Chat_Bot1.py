@@ -14,22 +14,26 @@ def ejecutar_chatbot(input_text):
     # ''' Etapa 2 disponer información del df y del cliente'''
     # Crear una instancia de la clase ChatBot
     chatbot = ChatBot()
-    # si las palabras no estan bien separadas para compararlas con las palabras clave ejecutar esta linea, tiene mucho costo de recursos
-    df['Palabras relacionadas'] = df['Palabras relacionadas'].apply(chatbot.extraer_palabras_clave)
-    # si las palabras estan bien usar esta linea
-    # df['columna2'] = df['columna2'].str.split(',')
-    diccionario = dict(zip(df['Titulo'], df['Palabras relacionadas'])) #genero diccionario con clave titulo y valor palabras relacionadas
-    keywords = chatbot.extraer_palabras_clave(input_text)
-
-    # '''Iniciar análisis de mensaje'''
-    requerimiento=chatbot.clasificar_tipo_peticion(keywords,diccionario) 
-    if not requerimiento:
-        st.write('lo siento no encuentro ninguna coincidencia con tu busqueda')
+    # evaluo si el input es un enlace
+    if chatbot.es_enlace(input_text):
+        st.write(df)
     else:
-        informes=chatbot.obtener_top(requerimiento)
-        df_filtrado=chatbot.df_filtrado(informes,df)
-        st.write(f"Las coincidencias encontradas en orden de importancia son: .\n .\n ")
-        st.dataframe(df_filtrado[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']])
+        # si las palabras no estan bien separadas para compararlas con las palabras clave ejecutar esta linea, tiene mucho costo de recursos
+        df['Palabras relacionadas'] = df['Palabras relacionadas'].apply(chatbot.extraer_palabras_clave)
+        # si las palabras estan bien usar esta linea
+        # df['columna2'] = df['columna2'].str.split(',')
+        diccionario = dict(zip(df['Titulo'], df['Palabras relacionadas'])) #genero diccionario con clave titulo y valor palabras relacionadas
+        keywords = chatbot.extraer_palabras_clave(input_text)
+
+        # '''Iniciar análisis de mensaje'''
+        requerimiento=chatbot.clasificar_tipo_peticion(keywords,diccionario) 
+        if not requerimiento:
+            st.write('lo siento no encuentro ninguna coincidencia con tu busqueda')
+        else:
+            informes=chatbot.obtener_top(requerimiento)
+            df_filtrado=chatbot.df_filtrado(informes,df)
+            st.write(f"Las coincidencias encontradas en orden de importancia son: .\n .\n ")
+            st.dataframe(df_filtrado[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']])
 
 
 

@@ -3,3 +3,4 @@ nltk
 pygsheets
 pandas
 unidecode
+re
