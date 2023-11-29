@@ -17,7 +17,10 @@ def ejecutar_chatbot(input_text):
     # evaluo si el input es un enlace
     if chatbot.es_enlace(input_text):
         df=df[df['Enlace'] == input_text]
-        st.dataframe(df[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']])
+        if df.shape[0]==0:
+            st.write('lo siento no encuentro ninguna coincidencia con tu busqueda')
+        else:
+            st.dataframe(df[['Titulo','Enlace','Responsable','Frecuencia de actualizacion']])
     else:
         # si las palabras no estan bien separadas para compararlas con las palabras clave ejecutar esta linea, tiene mucho costo de recursos
         df['Palabras relacionadas'] = df['Palabras relacionadas'].apply(chatbot.extraer_palabras_clave)
