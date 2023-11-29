@@ -41,7 +41,7 @@ def ejecutar_chatbot(input_text):
 
 
 
-st.title("ChatBot")
+st.title("Explorador de modelos Cárnicos")
 st.write("Hola soy tu guia por los desarrollos en el negocio cárnico, indicame que buscas")
 # Agregar una caja de texto
 input_texto = st.text_input("Cuentame que buscas")
