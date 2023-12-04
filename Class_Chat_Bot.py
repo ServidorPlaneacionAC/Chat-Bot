@@ -58,6 +58,7 @@ class ChatBot:
         '''
         items_ordenados = sorted(diccionario.items(), key=lambda item: item[1], reverse=True)
         top = []  
+        (f'{items_ordenados}')
         if len(items_ordenados)<=3:
             top= items_ordenados
         else:     
