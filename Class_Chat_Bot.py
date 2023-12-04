@@ -62,9 +62,9 @@ class ChatBot:
         st.write(items_ordenados)
 
         if items_ordenados[0][1]<=15 and items_ordenados[0][1]>0:
-            dicionario = self.contar_valores(items_ordenados)
-            if len(diccionario)>1:
-                top=list(diccionario.keys())
+            valores_contados = self.contar_valores(items_ordenados)
+            if len(valores_contados)>1:
+                top=list(valores_contados.keys())
                 st.write(top)
         else:  
             for clave, valor in items_ordenados:
