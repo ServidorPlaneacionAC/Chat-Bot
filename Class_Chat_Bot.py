@@ -61,7 +61,7 @@ class ChatBot:
         top = []  
         st.write(items_ordenados)
 
-        if items_ordenados[0][1]<=15 and items_ordenados[0][1]>0:
+        if items_ordenados[0][1]<=10 and items_ordenados[0][1]>0:
             valores_contados = self.contar_valores(items_ordenados)
             valores=list(valores_contados.keys())
             if len(valores_contados)>1:
@@ -71,7 +71,7 @@ class ChatBot:
             
         else:  
             for clave, valor in items_ordenados:
-                if valor != 0 and valor>15:
+                if valor != 0 and valor>10:
                     top.append(clave)            
                 if len(top) == n:
                     break
