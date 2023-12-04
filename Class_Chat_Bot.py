@@ -59,16 +59,17 @@ class ChatBot:
         '''
         items_ordenados = sorted(diccionario.items(), key=lambda item: item[1], reverse=True)
         top = []  
-        st.write(items_ordenados)
+        # st.write(items_ordenados)
 
         if items_ordenados[0][1]<=10 and items_ordenados[0][1]>0:
+            ''' evalua los numeros donde el valor es menor a 10 y genera grupos de valores
+                mostranod los todos los grupos menos el último
+            '''
             valores_contados = self.contar_valores(items_ordenados)
             valores=list(valores_contados.keys())
             if len(valores_contados)>1:
                 valores=list(valores_contados.keys())[:-1]
-            top=[tupla[0] for tupla in items_ordenados if tupla[1] in valores] 
-
-            
+            top=[tupla[0] for tupla in items_ordenados if tupla[1] in valores]             
         else:  
             for clave, valor in items_ordenados:
                 if valor != 0 and valor>10:
@@ -86,8 +87,8 @@ class ChatBot:
         items_ordenados -> Lista de tuplas (categoria, coincidencia): indica las coincidencias por categoria
 
         Retorna:
-        Diccionario -> Diccionario con las coincidencias en la clave y la cantidad de veces que se repite
-          como valor
+        Diccionario -> Diccionario con los numeros en la clave y la cantidad de veces que se repite
+          como valor, no toma en cuenta para el conteo los que tienen como numero 0
         '''
         conteo_valores = {}
         # Contar las repeticiones de los valores en la segunda posición de las tuplas
@@ -95,9 +96,10 @@ class ChatBot:
             if tupla[1]!= 0:
                 valor = tupla[1]
                 conteo_valores[valor] = conteo_valores.get(valor, 0) + 1
+        
         # Mostrar el resultado
-        for valor, conteo in conteo_valores.items():
-            st.write(f'El valor {valor} se repite {conteo} veces.')
+        # for valor, conteo in conteo_valores.items():
+        #     st.write(f'El valor {valor} se repite {conteo} veces.')
         return conteo_valores
     
     def df_filtrado(self,lista,df):
