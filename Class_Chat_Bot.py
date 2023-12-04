@@ -70,7 +70,7 @@ class ChatBot:
             for valor, conteo in conteo_valores.items():
                 st.write(f'El valor {valor} se repite {conteo} veces.')
 
-            top=[items_ordenados[i][0] if int(items_ordenados[i][1])>int(items_ordenados[i+2][1]) else '' for i in range(int(len(items_ordenados)/2)) ]
+            # top=[items_ordenados[i][0] if int(items_ordenados[i][1])>int(items_ordenados[i+2][1]) else '' for i in range(int(len(items_ordenados)/2)) ]
             st.write('entre')
         else:     
             for clave, valor in items_ordenados:
