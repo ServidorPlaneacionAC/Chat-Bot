@@ -64,7 +64,7 @@ class ChatBot:
             # top.append(list(items_ordenados.keys())[0])
             # top.append(list(items_ordenados.keys())[1])
             # top.append(list(items_ordenados.keys())[2])
-            
+            pass
         else:     
             for clave, valor in items_ordenados:
                 if valor != 0 and valor>10:
