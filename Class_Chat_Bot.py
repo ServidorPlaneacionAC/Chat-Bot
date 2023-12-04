@@ -51,15 +51,15 @@ class ChatBot:
                 palabras_clave.append(palabra)
         return palabras_clave
     
-    def obtener_top(self,diccionario,n=3):
+    def obtener_top(self,diccionario,n=100):
         '''
-        Retorna una lista con el top 3 elementos, recibe un diccionario con numeros en el valor y con base en este
+        Retorna una lista con el top n elementos, recibe un diccionario con numeros en el valor y con base en este
         genera el top 
         '''
         items_ordenados = sorted(diccionario.items(), key=lambda item: item[1], reverse=True)
         top = []        
         for clave, valor in items_ordenados:
-            if valor != 0:
+            if valor != 0 and valor>10:
                 top.append(clave)            
             if len(top) == n:
                 break
