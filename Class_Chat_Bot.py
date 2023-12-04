@@ -62,7 +62,7 @@ class ChatBot:
         st.write(items_ordenados)
 
         if items_ordenados[0][1]<=15 and items_ordenados[0][1]>0:
-            dicionario = contar_valores(items_ordenados)
+            dicionario = self.contar_valores(items_ordenados)
             if len(diccionario)>1:
                 top=list(diccionario.keys.values())
             # st.write('entre')
