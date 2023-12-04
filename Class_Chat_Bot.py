@@ -59,9 +59,11 @@ class ChatBot:
         '''
         items_ordenados = sorted(diccionario.items(), key=lambda item: item[1], reverse=True)
         top = []  
-        st.write(f'{items_ordenados}')
         if items_ordenados[0][1]<=5:
-            top= items_ordenados
+            top.append(items_ordenados[0][0])
+            top.append(items_ordenados[1][0])
+            top.append(items_ordenados[2][0])
+            st.write('entre')
         else:     
             for clave, valor in items_ordenados:
                 if valor != 0 and valor>10:
