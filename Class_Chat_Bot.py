@@ -63,9 +63,11 @@ class ChatBot:
 
         if items_ordenados[0][1]<=15 and items_ordenados[0][1]>0:
             valores_contados = self.contar_valores(items_ordenados)
+            valores=list(valores_contados.keys())
             if len(valores_contados)>1:
-                top=list(valores_contados.keys())
-            st.write(top)
+                valores=list(valores_contados.keys())[:-1]
+            top=[tupla[0] for tupla in items_ordenados if tupla[1] in valores] 
+
             
         else:  
             for clave, valor in items_ordenados:
