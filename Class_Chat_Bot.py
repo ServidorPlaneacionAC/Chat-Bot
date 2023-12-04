@@ -8,7 +8,7 @@ from nltk.tokenize import word_tokenize
 import pandas as pd
 from unidecode import unidecode
 import re
-# import streamlit as st
+import streamlit as st
 
 class ChatBot:
     def __init__(self):
@@ -59,7 +59,7 @@ class ChatBot:
         '''
         items_ordenados = sorted(diccionario.items(), key=lambda item: item[1], reverse=True)
         top = []  
-        print(f'{items_ordenados}')
+        st.write(f'{items_ordenados}')
         if len(items_ordenados)<=3:
             top= items_ordenados
         else:     
