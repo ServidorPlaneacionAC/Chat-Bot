@@ -67,7 +67,7 @@ class ChatBot:
         else:   
             st.write('entre2')  
             for clave, valor in items_ordenados:
-                if valor != 0 and valor>=10:
+                if valor != 0 and valor>=20:
                     top.append(clave)            
                 if len(top) == n:
                     break
