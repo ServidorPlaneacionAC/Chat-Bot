@@ -59,6 +59,8 @@ class ChatBot:
         '''
         items_ordenados = sorted(diccionario.items(), key=lambda item: item[1], reverse=True)
         top = []  
+        st.write(items_ordenados)
+        
         if items_ordenados[0][1]<=5:
 
             conteo_valores = {}
