@@ -60,6 +60,16 @@ class ChatBot:
         items_ordenados = sorted(diccionario.items(), key=lambda item: item[1], reverse=True)
         top = []  
         if items_ordenados[0][1]<=5:
+
+            conteo_valores = {}
+            # Contar las repeticiones de los valores en la segunda posición de las tuplas
+            for tupla in items_ordenados:
+                valor = tupla[1]
+                conteo_valores[valor] = conteo_valores.get(valor, 0) + 1
+            # Mostrar el resultado
+            for valor, conteo in conteo_valores.items():
+                st.write(f'El valor {valor} se repite {conteo} veces.')
+
             top=[items_ordenados[i][0] if int(items_ordenados[i][1])>int(items_ordenados[i+2][1]) else '' for i in range(int(len(items_ordenados)/2)) ]
             st.write('entre')
         else:     
