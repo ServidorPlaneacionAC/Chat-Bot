@@ -61,13 +61,14 @@ class ChatBot:
         top = []  
         st.write(items_ordenados)
 
-        if items_ordenados[0][1]<=10 and items_ordenados[0][1]>0:
-            # top=[items_ordenados[i][0] if int(items_ordenados[i][1])>int(items_ordenados[i+2][1]) else '' for i in range(int(len(items_ordenados)/2)) ]
-            st.write('entre')
-        else:   
-            st.write('entre2')  
+        if items_ordenados[0][1]<=15 and items_ordenados[0][1]>0:
+            dicionario = contar_valores(items_ordenados)
+            if len(diccionario)>1:
+                top=list(diccionario.keys.values())
+            # st.write('entre')
+        else:  
             for clave, valor in items_ordenados:
-                if valor != 0 and valor>10:
+                if valor != 0 and valor>15:
                     top.append(clave)            
                 if len(top) == n:
                     break
