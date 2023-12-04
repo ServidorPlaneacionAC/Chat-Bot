@@ -57,13 +57,16 @@ class ChatBot:
         genera el top 
         '''
         items_ordenados = sorted(diccionario.items(), key=lambda item: item[1], reverse=True)
-        top = []        
-        for clave, valor in items_ordenados:
-            if valor != 0 and valor>10:
-                top.append(clave)            
-            if len(top) == n:
-                break
-        
+        top = []  
+        if len(items_ordenados)<=3:
+            top= items_ordenados
+        else:     
+            for clave, valor in items_ordenados:
+                if valor != 0 and valor>10:
+                    top.append(clave)            
+                if len(top) == n:
+                    break
+            
         return top
     
     def df_filtrado(self,lista,df):
