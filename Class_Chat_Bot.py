@@ -62,27 +62,39 @@ class ChatBot:
         st.write(items_ordenados)
 
         if items_ordenados[0][1]<=10 and items_ordenados[0][1]>0:
-
-            conteo_valores = {}
-            # Contar las repeticiones de los valores en la segunda posición de las tuplas
-            for tupla in items_ordenados:
-                valor = tupla[1]
-                conteo_valores[valor] = conteo_valores.get(valor, 0) + 1
-            # Mostrar el resultado
-            for valor, conteo in conteo_valores.items():
-                st.write(f'El valor {valor} se repite {conteo} veces.')
-
             # top=[items_ordenados[i][0] if int(items_ordenados[i][1])>int(items_ordenados[i+2][1]) else '' for i in range(int(len(items_ordenados)/2)) ]
             st.write('entre')
         else:   
             st.write('entre2')  
             for clave, valor in items_ordenados:
-                if valor != 0 and valor>10:
+                if valor != 0 and valor>=10:
                     top.append(clave)            
                 if len(top) == n:
                     break
             
         return top
+    
+    def contar_valores(self,items_ordenados):
+        '''
+        Permite identificar cuantos elementos de la tupla tienen la misma coincidencia
+        
+        Parametros:
+        items_ordenados -> Lista de tuplas (categoria, coincidencia): indica las coincidencias por categoria
+
+        Retorna:
+        Diccionario -> Diccionario con las coincidencias en la clave y la cantidad de veces que se repite
+          como valor
+        '''
+        conteo_valores = {}
+        # Contar las repeticiones de los valores en la segunda posición de las tuplas
+        for tupla in items_ordenados:
+            if tupla[1]!= 0:
+                valor = tupla[1]
+                conteo_valores[valor] = conteo_valores.get(valor, 0) + 1
+        # Mostrar el resultado
+        for valor, conteo in conteo_valores.items():
+            st.write(f'El valor {valor} se repite {conteo} veces.')
+        return conteo_valores
     
     def df_filtrado(self,lista,df):
         '''
