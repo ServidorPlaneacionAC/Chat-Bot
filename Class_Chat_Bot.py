@@ -61,7 +61,7 @@ class ChatBot:
         top = []  
         # st.write(items_ordenados)
 
-        if items_ordenados[0][1]<=10 and items_ordenados[0][1]>0:
+        if items_ordenados[0][1]<=15 and items_ordenados[0][1]>0:
             ''' evalua los numeros donde el valor es menor a 10 y genera grupos de valores
                 mostranod los todos los grupos menos el último
             '''
@@ -72,7 +72,7 @@ class ChatBot:
             top=[tupla[0] for tupla in items_ordenados if tupla[1] in valores]             
         else:  
             for clave, valor in items_ordenados:
-                if valor != 0 and valor>10:
+                if valor != 0 and valor>15:
                     top.append(clave)            
                 if len(top) == n:
                     break
