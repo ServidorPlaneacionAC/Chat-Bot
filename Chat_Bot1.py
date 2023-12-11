@@ -39,10 +39,10 @@ def ejecutar_chatbot(input_text):
             st.write(f"Lass coincidencias encontradas en orden de importancia son: .\n .\n ")
             
             # Crear una nueva columna con enlaces formateados en Markdown
-            df_filtrado['Enlace'] = df_filtrado['Enlace'].apply(lambda x: st.markdown(f"[{x}]( {x} )"))
+            df_filtrado['Enlace'] = df_filtrado['Enlace'].apply(lambda x: (f"[{x}]( {x} )"))
             
             # Mostrar el DataFrame en Streamlit con la nueva columna de enlaces formateados
-            st.write(df_filtrado[['Titulo', 'Enlace', 'Responsable', 'Frecuencia de actualizacion']], unsafe_allow_html=True)
+            st.Dataframe(df_filtrado[['Titulo', 'Enlace', 'Responsable', 'Frecuencia de actualizacion']])
             for index, row in df_filtrado.iterrows():
                 st.write(f"**{row['Titulo']}**")
                 st.markdown(f"{row['Enlace']}")
