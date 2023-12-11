@@ -36,7 +36,7 @@ def ejecutar_chatbot(input_text):
         else:
             informes=chatbot.obtener_top(requerimiento)
             df_filtrado=chatbot.df_filtrado(informes,df)
-            st.write(f"Las coincidencias encontradas en orden de importancia son: .\n .\n ")
+            st.write(f"Lass coincidencias encontradas en orden de importancia son: .\n .\n ")
             
             # Crear una nueva columna con enlaces formateados en Markdown
             df_filtrado['Enlace'] = df_filtrado['Enlace'].apply(lambda x: f"[{x}]( {x} )")
