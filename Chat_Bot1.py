@@ -42,7 +42,7 @@ def ejecutar_chatbot(input_text):
             df_filtrado['Enlace'] = df_filtrado['Enlace'].apply(lambda x: (f"[{x}]( {x} )"))
             
             # Mostrar el DataFrame en Streamlit con la nueva columna de enlaces formateados
-            st.Dataframe(df_filtrado[['Titulo', 'Enlace', 'Responsable', 'Frecuencia de actualizacion']])
+            st.dataframe(df_filtrado[['Titulo', 'Enlace', 'Responsable', 'Frecuencia de actualizacion']])
             for index, row in df_filtrado.iterrows():
                 st.write(f"**{row['Titulo']}**")
                 st.markdown(f"{row['Enlace']}")
