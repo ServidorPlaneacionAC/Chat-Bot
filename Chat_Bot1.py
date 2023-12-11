@@ -45,7 +45,7 @@ def ejecutar_chatbot(input_text):
             st.write(df_filtrado[['Titulo', 'Enlace', 'Responsable', 'Frecuencia de actualizacion']], unsafe_allow_html=True)
             for index, row in df_filtrado.iterrows():
                 st.write(f"**{row['Titulo']}**")
-                st.markdown(f"[{row['Enlace']}]({row['Enlace']})")
+                st.markdown(f"{row['Enlace']}")
                 st.write(f"Responsable: {row['Responsable']}")
                 st.write(f"Frecuencia de actualización: {row['Frecuencia de actualizacion']}")
                 st.write("---")
