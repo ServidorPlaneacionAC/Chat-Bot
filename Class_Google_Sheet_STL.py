@@ -25,3 +25,12 @@ class ConexionGoogleSheets:
             return data
         else:
             return pd.DataFrame()
+
+    def escribir_dataframe(self, id_google_sheet, df, hoja='Hoja 1', rango='A1'):
+        '''
+        Escribe un DataFrame en la hoja de Google Sheet especificada.
+        '''
+        spreadsheet = self.gc.open_by_key(id_google_sheet)
+        worksheet = spreadsheet.worksheet_by_title(hoja)
+        if worksheet:
+            worksheet.set_dataframe(df, rango)
